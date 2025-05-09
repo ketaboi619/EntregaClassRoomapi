@@ -1,4 +1,4 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

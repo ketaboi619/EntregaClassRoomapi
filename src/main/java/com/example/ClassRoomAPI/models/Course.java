@@ -1,4 +1,4 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -11,7 +11,6 @@ public class Course {
     @OneToMany(mappedBy = "Registration")
     @JsonManagedReference
     private List<Registration> registration;
-
 
 
     @ManyToOne

@@ -1,4 +1,4 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -15,7 +15,8 @@ public class Qualification {
 
     @ManyToOne
     @JoinColumn(name = "fk_idClass", referencedColumnName = "idClass")
-    @JsonBackReference Class idclass;
+    @JsonBackReference
+    Cl2 idclass;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

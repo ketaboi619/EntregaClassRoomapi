@@ -1,7 +1,7 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import helpers.AttendanceStatus;
+import com.example.ClassRoomAPI.helpers.AttendanceStatus;
 import jakarta.persistence.*;
 
 @Entity

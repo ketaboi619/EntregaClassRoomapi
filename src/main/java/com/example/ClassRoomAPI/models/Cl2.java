@@ -1,12 +1,11 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
-public class Class {
+public class Cl2 {
 
     @ManyToOne
     @JoinColumn(name = "fk_idCourse", referencedColumnName = "idCourse")
@@ -26,9 +25,9 @@ public class Class {
     @Column(length = 20)
     private String Name;
 
-    public Class(){}
+    public Cl2(){}
 
-    public Class(Integer idClass, String name) {
+    public Cl2(Integer idClass, String name) {
         this.idClass = idClass;
         Name = name;
     }

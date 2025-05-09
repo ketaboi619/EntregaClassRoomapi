@@ -1,7 +1,7 @@
-package models;
+package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import helpers.UserType;
+import com.example.ClassRoomAPI.helpers.UserType;
 import jakarta.persistence.*;
 
 import java.util.List;
