@@ -1,6 +1,7 @@
 package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -10,13 +11,16 @@ import java.util.List;
 
 public class Teacher {
 
-    @ManyToOne
-    @JoinColumn(name = "fk_idUser", referencedColumnName = "idUser")
-    @JsonBackReference User user;
+    @OneToOne
+    @JoinColumn(name = "fk_user", referencedColumnName = "id_user")
+    @JsonManagedReference(value = "teacher-user")
+    private User user;
 
-    @OneToMany(mappedBy = "Course")
-    @JsonBackReference
-    private List<Course>Course;
+    @ManyToOne
+    @JoinColumn(name="fk_course", referencedColumnName = "id_course")
+    @JsonBackReference(value = "teacher-course")
+    Teacher teacher;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

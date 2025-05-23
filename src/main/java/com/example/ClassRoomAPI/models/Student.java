@@ -12,16 +12,14 @@ import java.util.List;
 
 public class Student {
 
+    @OneToOne(mappedBy = "Students")
+    @JsonBackReference(value = "registration-student")
+    private Registration registration;
 
-    @OneToMany(mappedBy = "Registration")
-    @JsonManagedReference
-    private List<Registration> Registration;
-
-    @ManyToOne
-    @JoinColumn(name = "fk_idUser",referencedColumnName = "idUser")
-    @JsonBackReference
-    User user;
-
+    @OneToOne(mappedBy = "user")
+    @JoinColumn(name = "fk_user", referencedColumnName = "id_user")
+    @JsonManagedReference(value = "teacher-user")
+    private User user;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

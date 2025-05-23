@@ -1,0 +1,64 @@
+/users
+{
+
+"name" :"zeta zeta"
+"email" :"zeta@gmail.com"
+"password" :"2323m"
+"phone" :"3057861817"
+"userType" :"Teacher"
+
+}
+
+/teacher
+{
+"specialism"
+"usuario":{
+
+    "id":1
+
+    }
+
+}
+
+/student
+{
+
+"grade":"8A"
+"birthday":"10/02/2005"
+"adress":"34 Street"
+
+}
+
+/registration
+{
+
+"registrationDate":"29/08/2025"
+
+}
+
+
+/qualification
+{
+
+"note":"3.5"
+"evaluationDay":"12/05/2025"
+
+}
+
+/course{
+
+"name":"biology"
+
+}
+
+/class
+{
+
+"name":"class 8"
+
+}
+
+/attendance
+{
+"date":"20/05/2025"
+}

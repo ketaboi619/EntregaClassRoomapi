@@ -1,20 +1,22 @@
 package com.example.ClassRoomAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
 public class Cl2 {
 
-    @ManyToOne
-    @JoinColumn(name = "fk_idCourse", referencedColumnName = "idCourse")
-    @JsonBackReference
-    Course course;
+    @OneToOne(mappedBy = "qualification")
+    @JoinColumn(name = "fk_qualification", referencedColumnName = "id_qualification")
+    @JsonManagedReference(value = "class-qualification")
+    private Qualification qualification;
 
-    @OneToOne(mappedBy = "Qualification")
-    @JsonBackReference
-    private List<Qualification>qualifications;
+    @ManyToOne
+    @JoinColumn(name="fk_course", referencedColumnName = "id_course")
+    @JsonBackReference(value = "class-course")
+    Course course;
 
 
     @Id

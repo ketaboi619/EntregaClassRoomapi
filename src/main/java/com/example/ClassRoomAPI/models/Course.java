@@ -12,10 +12,11 @@ public class Course {
     @JsonManagedReference
     private List<Registration> registration;
 
-
     @ManyToOne
-    @JoinColumn(name = "fk_idTeacher",referencedColumnName = "idTeacher")
-    @JsonBackReference Teacher teacher;
+    @JoinColumn(name="fk_teacher", referencedColumnName = "id_teacher")
+    @JsonBackReference(value = "teacher-course")
+    Teacher teacher;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

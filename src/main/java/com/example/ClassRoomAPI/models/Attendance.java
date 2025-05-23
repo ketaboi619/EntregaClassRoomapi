@@ -5,11 +5,13 @@ import com.example.ClassRoomAPI.helpers.AttendanceStatus;
 import jakarta.persistence.*;
 
 @Entity
-public class Attendance {
+public class
+
+Attendance {
 
     @ManyToOne
-    @JoinColumn(name = "fk_idStudent", referencedColumnName = "idStudent")
-    @JsonBackReference
+    @JoinColumn(name="fk_student", referencedColumnName = "id_student")
+    @JsonBackReference(value = "attendance-student")
     Student student;
 
     @ManyToOne
